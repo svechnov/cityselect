@@ -1,0 +1,9 @@
+Changelog for cityselect.
+
+cityselect 0.0.2
+==============
+- add Sypex Geo API
+
+cityselect 0.0.1
+==============
+- Initial release.
