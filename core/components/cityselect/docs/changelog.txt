@@ -1,6 +1,6 @@
 Changelog for cityselect.
 
-cityselect 0.0.2
+cityselect 0.0.3
 ==============
 - refactoring
 

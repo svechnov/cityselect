@@ -3,8 +3,8 @@
 $chunks = array();
 
 $tmp = array(
-	'tpl.cityselect.item' => array(
-		'file' => 'item',
+	'tpl.CitySelect.example' => array(
+		'file' => 'example',
 		'description' => '',
 	),
 );
@@ -12,12 +12,7 @@ $tmp = array(
 // Save chunks for setup options
 $BUILD_CHUNKS = array();
 
-$tmp = array(
-	'tpl.CitySelect.example' => array(
-		'file' => 'example',
-		'description' => '',
-	),
-);
+
 
 foreach ($tmp as $k => $v) {
 	/* @avr modChunk $chunk */
