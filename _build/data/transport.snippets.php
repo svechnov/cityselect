@@ -7,10 +7,12 @@ $tmp = array(
 		'file' => 'cityselect',
 		'description' => '',
 	),
+	/*
 	'sxgeocity' => array(
 		'file' => 'sxgeocity',
 		'description' => '',
 	),
+	*/
 );
 
 foreach ($tmp as $k => $v) {

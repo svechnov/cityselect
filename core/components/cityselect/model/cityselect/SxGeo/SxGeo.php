@@ -60,6 +60,11 @@ class SxGeo {
 
 	public function __construct($db_file = 'SxGeo.dat', $type = SXGEO_FILE){
 		$this->fh = fopen($db_file, 'rb');
+
+		if ( $this->fh===false ) {// Vgrish
+			return true;
+		}
+
 		// Сначала убеждаемся, что есть файл базы данных
 		$header = fread($this->fh, 40); // В версии 2.2 заголовок увеличился на 8 байт
 		if(substr($header, 0, 3) != 'SxG') die("Can't open {$db_file}\n");

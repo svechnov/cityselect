@@ -9,12 +9,18 @@ $tmp = array(
 	),
 	'frontend_css' => array(
 		'type' => 'textfield',
-		'value' => '[[+assetsUrl]]css/default.css',
+		'value' => '[[+assetsUrl]]css/web/default.css',
 	),
 	'frontend_js' => array(
 		'type' => 'textfield',
-		'value' => '[[+assetsUrl]]js/default.js',
+		'value' => '[[+assetsUrl]]js/web/default.js',
 	),
+	'toPlaceholder' => array(
+		'type' => 'textfield',
+		'value' => '',
+	),
+
+
 );
 
 foreach ($tmp as $k => $v) {

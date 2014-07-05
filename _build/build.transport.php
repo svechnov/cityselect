@@ -8,8 +8,8 @@ set_time_limit(0);
 
 require_once 'build.config.php';
 // Refresh model
-if (file_exists('build.model.php')) {
-	require_once 'build.model.php';
+if (file_exists('build.model111.php')) {
+	require_once 'build.model111.php';
 }
 
 /* define sources */

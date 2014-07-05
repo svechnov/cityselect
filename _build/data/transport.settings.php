@@ -13,7 +13,11 @@ $tmp = array(
 		'value' => '',
 		'area' => 'cityselect_main',
 	),
-
+	'name_db_sxgeo' => array(
+		'xtype' => 'textfield',
+		'value' => 'SxGeoCity.dat',
+		'area' => 'cityselect_main',
+	),
 	//временные
 /*
 	'assets_path' => array(

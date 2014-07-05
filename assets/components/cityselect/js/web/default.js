@@ -522,6 +522,8 @@
     };
 })(jQuery);
 
+
+
 $(function() {
     var can_submit = false;
     var can_hide_input = false;
@@ -561,16 +563,12 @@ $(function() {
     $('.geolocation .choosen,.geolocation .other').click(show_input);
 
     function update_results(dataname,dataid) {
-
-        //console.log("город-" + dataname);
-        //console.log("кладр-" + dataid);
         // обновляем город
         $('#id_city_name').val(dataname);
         $('.choosen').html(dataname);
         // пишем в куки город
         document.cookie = 'city_name=' + encodeURIComponent(dataname) + '; path=/';
         //document.cookie = 'city_id=' + encodeURIComponent(dataid) + '; path=/';
-
         can_submit = true;
     }
 

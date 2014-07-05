@@ -29,7 +29,6 @@ class cityselect {
 			'cssUrl' => $assetsUrl . 'css/',
 			'jsUrl' => $assetsUrl . 'js/',
 
-
 			'corePath' => $corePath,
 			'assetsPath' => $assetsPath,
 
@@ -40,18 +39,17 @@ class cityselect {
 			'snippetsPath' => $corePath . 'elements/snippets/',
 			//'processorsPath' => $corePath . 'processors/',
 
-			'frontend_css' => '[[+assetsUrl]]css/default.css',
-			'frontend_js' => '[[+assetsUrl]]js/default.js',
+			'frontend_css' => '[[+assetsUrl]]wev/css/default.css',
+			'frontend_js' => '[[+assetsUrl]]web/js/default.js',
 
-			'key' => $this->modx->getOption('cityselect_key', null, 'default'),
-			'token' => $this->modx->getOption('cityselect_token', null, 'default'),
+			'key' => $this->modx->getOption('cityselect_key', null, ''),
+			'token' => $this->modx->getOption('cityselect_token', null, ''),
 
 		], $config);
 
 
 	}
 
-///////
 	public function initialize($ctx = 'web', $scriptProperties = array()) {
 		$this->config = array_merge($this->config, $scriptProperties);
 		$this->config['ctx'] = $ctx;
@@ -76,19 +74,16 @@ class cityselect {
 
 						};
 					');
-					if (file_put_contents($this->config['assetsPath'] . 'js/config.js', $config_js)) {
-						$this->modx->regClientStartupScript($this->config['assetsUrl'] . 'js/config.js');
-					}
-					else {
-						$this->modx->regClientStartupScript("<script type=\"text/javascript\">\n".$config_js."\n</script>", true);
-					}
+
+					$this->modx->regClientStartupScript("<script type=\"text/javascript\">\n".$config_js."\n</script>", true);
+
 
 					if ($js = trim($this->config['frontend_js'])) {
 						if (preg_match('/\.js/i', $js)) {
 							$this->modx->regClientScript(preg_replace(array('/^\n/', '/\t{7}/'), '', '
 								<script type="text/javascript">
 									if(typeof jQuery == "undefined") {
-										document.write("<script src=\"'.$this->config['assetsUrl'].'js/lib/jquery.min.js\" type=\"text/javascript\"><\/script>");
+										document.write("<script src=\"'.$this->config['assetsUrl'].'js/web/lib/jquery.min.js\" type=\"text/javascript\"><\/script>");
 									}
 								</script>
 							'), true);
@@ -102,7 +97,6 @@ class cityselect {
 
 		return true;
 	}
-//////////
 
 
 }
