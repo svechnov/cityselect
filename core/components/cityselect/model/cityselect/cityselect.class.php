@@ -24,7 +24,7 @@ class cityselect {
 		$assetsPath = $this->modx->getOption('cityselect_assets_path', $config, $this->modx->getOption('assets_path') . 'components/cityselect/');
 		$this->modx->lexicon->load('cityselect:default');
 
-		$this->config = array_merge([
+		$this->config = array_merge(array(
 			'assetsUrl' => $assetsUrl,
 			'cssUrl' => $assetsUrl . 'css/',
 			'jsUrl' => $assetsUrl . 'js/',
@@ -45,7 +45,7 @@ class cityselect {
 			'key' => $this->modx->getOption('cityselect_key', null, ''),
 			'token' => $this->modx->getOption('cityselect_token', null, ''),
 
-		], $config);
+		), $config);
 
 
 	}
