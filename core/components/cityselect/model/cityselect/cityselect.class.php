@@ -12,6 +12,7 @@ class cityselect {
 	public $config;
 	/** @var array $initialized */
 	public $initialized = array();
+	public $namespace = 'cityselect';
 	/**
 	 * @param modX $modx
 	 * @param array $config

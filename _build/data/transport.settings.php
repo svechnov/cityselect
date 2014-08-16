@@ -19,8 +19,8 @@ $tmp = array(
 		'area' => 'cityselect_main',
 	),
 	//временные
-/*
-	'assets_path' => array(
+
+/*	'assets_path' => array(
 		'xtype' => 'textfield',
 		'value' => '{base_path}cityselect/assets/components/cityselect/',
 		'area' => 'cityselect_main',
@@ -34,8 +34,8 @@ $tmp = array(
 		'xtype' => 'textfield',
 		'value' => '{base_path}cityselect/core/components/cityselect/',
 		'area' => 'cityselect_main',
-	),
-*/
+	),*/
+
 	//временные
 /*
 

@@ -1,5 +1,4 @@
 <?php
-
 $cityselect = $modx->getService('cityselect','cityselect',$modx->getOption('cityselect_core_path',null,$modx->getOption('core_path').'components/cityselect/').'model/cityselect/',$scriptProperties);
 if (!($cityselect instanceof cityselect)) return '';
 
@@ -17,8 +16,16 @@ if (empty($_COOKIE['city_name'])) {
 
 	$SxGeo = new SxGeo($modx->getOption('cityselect_assets_path',null,$modx->getOption('assets_path').'components/cityselect/').'data/'.$modx->getOption('cityselect_name_db_sxgeo','SxGeoCity.dat') );
 	$Sx_arr = $SxGeo->getCityFull($_SERVER['REMOTE_ADDR']);
-	if (!empty($Sx_arr['city']['name_ru'])) $_COOKIE['city_name'] = $Sx_arr['city']['name_ru'];
-	else $_COOKIE['city_name'] = $modx->lexicon('cityselect_is_unknown');
+	if (!empty($Sx_arr['city']['name_ru'])) {
+
+		setcookie('city_name',$Sx_arr['city']['name_ru'], time() + (365*24*60*60) );
+
+	}
+	else {
+
+		setcookie('city_name',$modx->lexicon('cityselect_is_unknown'), time() + (60*60));
+	}
+
 }
 
 $modx->setPlaceholder('cityselect', $_COOKIE['city_name']);
